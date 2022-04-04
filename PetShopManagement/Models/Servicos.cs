@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 
 namespace PetShopManagement.Models
 {
-    public class ErrorViewModel
+    public class Servicos
     {
-        public string RequestId { get; set; }
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public double Valor { get; set; }
+
     }
 }

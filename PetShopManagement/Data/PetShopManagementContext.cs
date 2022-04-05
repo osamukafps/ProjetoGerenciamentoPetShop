@@ -15,5 +15,9 @@ namespace PetShopManagement.Data
         }
 
         public DbSet<Servicos> Servicos { get; set; }
+        public DbSet<Produtos> Produtos { get; set; }
+        public DbSet<Animal> Animal { get; set; }
+        public DbSet<Atendimentos> Atendimentos { get; set; }
+        public DbSet<Funcionario> Funcionario { get; set; }
     }
 }

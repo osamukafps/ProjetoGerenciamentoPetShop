@@ -1,29 +1,31 @@
-﻿using System;
+﻿using PetShopManagement.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace PetShopManagement.Models
 {
-    public class Servicos
+    public class Animal
     {
         #region Propriedades
         public int Id { get; set; }
         public string Nome { get; set; }
-        public double Valor { get; set; }
+        public ETipoEspecieAnimal Especie { get; set; }
+        public string Raca { get; set; }
         #endregion
 
         #region Construtores
-        public Servicos()
+        public Animal()
         {
 
         }
-
-        public Servicos(int id, string nome, double valor)
+        public Animal(int id, string nome, ETipoEspecieAnimal especie, string raca)
         {
             Id = id;
             Nome = nome;
-            Valor = valor;
+            Especie = especie;
+            Raca = raca;
         }
         #endregion
     }

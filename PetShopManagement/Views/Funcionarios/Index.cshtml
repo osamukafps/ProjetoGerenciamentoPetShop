@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Funcionario>
+
+@{
+
+    ViewData["Title"] = "Funcionarios";
+
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="table-dark">
+            <th>
+                @Html.DisplayNameFor(Model => Model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.DataNascimento)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var item in Model)
+            {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento, "{0: dd-MM-yyyy}")
+            </td>
+            <td>
+                <button asp-action="Edit" asp-route-id="@item.Id" type="submit" class="btn btn-warning">
+                    Editar
+                </button>
+                <button asp-action="Edit" asp-route-id="@item.Id" type="submit" class="btn btn-primary">
+                    Detalhes
+                </button>
+                <input class="btn btn-danger" type="button" value="Excluir" onclick="location.href='@Url.Action("Delete", "Funcionarios")'" />
+            </td>
+        </tr>
+            }
+    </tbody>
+</table>
+
+<input class="btn btn-outline-success" type="button" value="Adicionar" onclick="location.href='@Url.Action("Create", "Funcionarios")'" />
+

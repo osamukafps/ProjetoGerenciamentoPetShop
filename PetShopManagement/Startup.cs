@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using PetShopManagement.Data;
+using PetShopManagement.Services;
 
 namespace PetShopManagement
 {
@@ -25,11 +26,12 @@ namespace PetShopManagement
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             services.AddDbContext<PetShopManagementContext>(options =>
-                   options.UseMySql(Configuration.GetConnectionString("PetShopManagementContext"), builder =>
-                        builder.MigrationsAssembly("PetShopManagement")));
+                   options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database = PET_SHOP_MVC; Integrated security = true"));
+
+            services.AddScoped<FuncionarioServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -50,9 +50,8 @@
                 <button asp-action="Edit" asp-route-id="@item.Id" type="submit" class="btn btn-warning">
                     Editar
                 </button>
-                <button asp-action="Edit" asp-route-id="@item.Id" type="submit" class="btn btn-primary">
-                    Detalhes
-                </button>
+                <input class="btn btn-primary" type="button" value="Detalhes" onclick="location.href='@Url.Action("Details", "Funcionarios")'" />
+
                 <input class="btn btn-danger" type="button" value="Excluir" onclick="location.href='@Url.Action("Delete", "Funcionarios")'" />
             </td>
         </tr>

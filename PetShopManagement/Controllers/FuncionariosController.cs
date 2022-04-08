@@ -11,7 +11,7 @@ namespace PetShopManagement.Controllers
     public class FuncionariosController : Controller
     {
         private readonly FuncionarioServices _funcionarioService;
-        
+
         public FuncionariosController(FuncionarioServices funcionarioService)
         {
             _funcionarioService = funcionarioService;
@@ -24,7 +24,7 @@ namespace PetShopManagement.Controllers
         }
 
         public IActionResult Create()
-        {          
+        {
             return View();
         }
 
@@ -35,14 +35,47 @@ namespace PetShopManagement.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Delete()
+
+        public IActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+                return NotFound();
+
+            var funcionario = _funcionarioService.EncontrarFuncionarioPorId(id.Value);
+
+            if (funcionario == null)
+                return NotFound();
+
+            return View(funcionario);
+
         }
 
-        public IActionResult Details()
+        [HttpPost]
+        public IActionResult Delete(int id)
         {
-            return View();
+            _funcionarioService.RemoverFuncionario(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Edit(int? id, Funcionario funcionario)
+        {
+            funcionario = _funcionarioService.EncontrarFuncionarioPorId(id.Value);           
+            return View(funcionario);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int id, Funcionario funcionario)
+        {
+            if (id != funcionario.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                _funcionarioService.EditarFuncionario(id, funcionario);               
+            }
+            return RedirectToAction(nameof(Index));
         }
     }
 }

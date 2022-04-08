@@ -32,6 +32,7 @@ namespace PetShopManagement
                    options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database = PET_SHOP_MVC; Integrated security = true"));
 
             services.AddScoped<FuncionarioServices>();
+            services.AddScoped<ServicoServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

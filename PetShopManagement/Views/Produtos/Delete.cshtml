@@ -1,0 +1,40 @@
+﻿@model PetShopManagement.Models.Produtos
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Excluir</h1>
+<div class="alert alert-dismissible alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>ATENÇÃO!</strong> Tem certeza que deseja excluir o registro?!
+</div>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoProduto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoProduto)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id"/>
+        <input type="submit" value="Excluir" class="btn btn-danger" />        |     
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div>

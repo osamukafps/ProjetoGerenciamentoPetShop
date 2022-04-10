@@ -24,9 +24,40 @@ namespace PetShopManagement.Controllers
             return View(listaProdutos);
         }
 
-        public void Create(Produtos produto)
+        public IActionResult Create()
         {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Produtos produto)
+        {
+            _produtoService.AdicionarProduto(produto);
+            return RedirectToAction(nameof(Index));
 
+        }
+
+        public IActionResult Edit(int? id, Produtos produto)
+        {
+            produto = _produtoService.EncontrarProdutoPorId(id);
+            return View(produto);
+        }
+        [HttpPost]
+        public IActionResult Edit(int id, Produtos produto)
+        {
+            _produtoService.EditarProduto(id, produto);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Delete(int? id, Produtos produto)
+        {
+            produto =_produtoService.EncontrarProdutoPorId(id);
+            return View(produto);
+        }
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            _produtoService.ExcluirProduto(id);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

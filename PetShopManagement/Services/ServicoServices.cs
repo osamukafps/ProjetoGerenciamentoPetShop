@@ -21,5 +21,16 @@ namespace PetShopManagement.Services
             return _context.Servicos.OrderBy(x => x.Nome).ToList();
         }
 
+        public Servicos EncontrarPorId(int id)
+        {
+            return _context.Servicos.FirstOrDefault(x => x.Id == id);
+        }
+
+        public double RetornarValor(int id)
+        {
+            var servico = EncontrarPorId(id);
+            return servico.Valor;
+        }
+
     }
 }

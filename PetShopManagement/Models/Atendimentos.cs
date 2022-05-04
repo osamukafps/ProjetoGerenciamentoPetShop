@@ -14,8 +14,8 @@ namespace PetShopManagement.Models
         public Funcionario Funcionario { get; set; }
         public Animal Animal { get; set; }
 
-        public ICollection<Servicos> Servicos { get; set; } = new List<Servicos>();
-        public ICollection<Produtos> Produtos { get; set; } = new List<Produtos>();
+        public List<Servicos> Servicos { get; set; } = new List<Servicos>();
+        public List<Produtos> Produtos { get; set; } = new List<Produtos>();
         #endregion
 
         #region Construtores
@@ -34,14 +34,14 @@ namespace PetShopManagement.Models
         #endregion
 
         #region Métodos Públicos
-        public void AtribuirFuncionario(Funcionario funcionario)
-        {
-            this.Funcionario = funcionario;
+        public Funcionario AtribuirFuncionario(Funcionario funcionario)
+        {          
+            return this.Funcionario = funcionario;
         }
 
-        public void AdicionarAnimal(Animal animal)
+        public Animal AdicionarAnimal(Animal animal)
         {
-            this.Animal = animal;
+           return this.Animal = animal;
         }
 
         public void AdicionarServicos(Servicos servicos)

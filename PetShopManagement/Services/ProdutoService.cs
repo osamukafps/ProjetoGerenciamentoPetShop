@@ -55,6 +55,10 @@ namespace PetShopManagement.Services
             _context.SaveChanges();
         }
 
-
+        public double RetornarValor(int id)
+        {
+            var produto = EncontrarProdutoPorId(id);
+            return produto.Valor;
+        }
     }
 }

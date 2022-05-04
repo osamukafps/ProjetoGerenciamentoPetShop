@@ -34,6 +34,8 @@ namespace PetShopManagement
             services.AddScoped<FuncionarioServices>();
             services.AddScoped<ServicoServices>();
             services.AddScoped<ProdutoService>();
+            services.AddScoped<AtendimentoService>();
+            services.AddScoped<AnimalService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

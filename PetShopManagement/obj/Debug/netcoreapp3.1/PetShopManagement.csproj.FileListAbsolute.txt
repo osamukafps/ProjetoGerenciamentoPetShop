@@ -435,3 +435,8 @@ C:\Users\samue\source\repos\PetShopManagement\PetShopManagement\obj\Debug\netcor
 C:\Users\samue\source\repos\PetShopManagement\PetShopManagement\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Create.cshtml.g.cs
 C:\Users\samue\source\repos\PetShopManagement\PetShopManagement\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Edit.cshtml.g.cs
 C:\Users\samue\source\repos\PetShopManagement\PetShopManagement\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Delete.cshtml.g.cs
+C:\Users\samue\source\repos\PetShopManagement\PetShopManagement\obj\Debug\netcoreapp3.1\Razor\Views\Atendimentos\Create.cshtml.g.cs
+C:\Users\samue\source\repos\PetShopManagement\PetShopManagement\obj\Debug\netcoreapp3.1\Razor\Views\Atendimentos\Delete.cshtml.g.cs
+C:\Users\samue\source\repos\PetShopManagement\PetShopManagement\obj\Debug\netcoreapp3.1\Razor\Views\Atendimentos\Details.cshtml.g.cs
+C:\Users\samue\source\repos\PetShopManagement\PetShopManagement\obj\Debug\netcoreapp3.1\Razor\Views\Atendimentos\Edit.cshtml.g.cs
+C:\Users\samue\source\repos\PetShopManagement\PetShopManagement\obj\Debug\netcoreapp3.1\Razor\Views\Atendimentos\Index.cshtml.g.cs
